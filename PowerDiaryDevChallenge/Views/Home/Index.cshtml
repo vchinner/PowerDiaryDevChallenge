@@ -1,0 +1,48 @@
+﻿@model ChatViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" style="max-width:400px;margin-left:auto;margin-right:auto;">
+    <h1 class="display-4">Chat History</h1>
+    @Html.DropDownListFor(m => m.SelectedAgrregationLevel, new SelectList(Enum.GetValues(typeof(PowerDiaryDevChallenge.Chat.AggregationLevels))), new { @class = "form-control" })
+    <hr />
+    <div class="text-left">
+        @{ foreach (var c in Model.ChatEntries)
+            {
+                <div style="display:flex">
+                    <div>@c.Key.ToString("dd MMM hh:mm:ss tt"):</div>
+                    <div style="margin-left:12px;width:50%;">
+                        @{ foreach (var grp in c.Value)
+                            {
+                                if (Model.SelectedAgrregationLevel == "Seconds")
+                                {
+                                    foreach (var entry in grp.Entries)
+                                    {
+                                        <p>@entry</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p>@grp.ToString()</p>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#SelectedAgrregationLevel").on("change", function () {
+                var selected = $("#SelectedAgrregationLevel option:selected").text();
+                window.location.href = "/home/index?level=" + selected
+            });
+        });
+    </script>
+
+}
