@@ -3,6 +3,25 @@
     ViewData["Title"] = "Home Page";
 }
 
+@functions {
+    public static string DateFormatHelper(string selectedAgrregationLevel)
+    {
+        switch(selectedAgrregationLevel)
+        {
+            case "Seconds":
+                return "dd MMM h:mm:ss tt";
+            case "Minutes":
+                return "dd MMM h:mm tt";
+            case "Hours":
+                return "dd MMM h tt";
+            case "Days":
+                return "dd MMM";
+            default:
+                return "dd MMM hh:mm:ss tt";
+        }
+    }
+}
+
 <div class="text-center" style="max-width:400px;margin-left:auto;margin-right:auto;">
     <h1 class="display-4">Chat History</h1>
     @Html.DropDownListFor(m => m.SelectedAgrregationLevel, new SelectList(Enum.GetValues(typeof(PowerDiaryDevChallenge.Chat.AggregationLevels))), new { @class = "form-control" })
@@ -11,7 +30,7 @@
         @{ foreach (var c in Model.ChatEntries)
             {
                 <div style="display:flex">
-                    <div>@c.Key.ToString("dd MMM hh:mm:ss tt"):</div>
+                    <div>@c.Key.ToString(DateFormatHelper(Model.SelectedAgrregationLevel)):</div>
                     <div style="margin-left:12px;width:50%;">
                         @{ foreach (var grp in c.Value)
                             {
