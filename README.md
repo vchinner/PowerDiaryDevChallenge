@@ -5,7 +5,7 @@
 | ----------- | ----------- |
 | PowerDiaryDevChallenge | .Net Core 3.1 MVC Web Application |
 | PowerDiaryDevChallenge.Chat | .Net Core 3.1 Class Library | 
-| PowerDiaryDevChallenge.Data              | Net Core 3.1 Class Library |
+| PowerDiaryDevChallenge.Data              | .Net Core 3.1 Class Library |
 | PowerDiaryDevChallenge.IntegrationTests | nUnit & Moq Integration Tests |
 | PowerDiaryDevChallenge.UnitTests  | xUnit Unit Tests |
 
