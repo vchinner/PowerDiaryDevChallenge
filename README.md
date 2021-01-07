@@ -21,6 +21,8 @@ The image port is setup on port 80 but can be overwritten with following command
 
 `docker run -p 8080:80 vincechinner/powerdiarydevchallenge`
 
+The application will now run on `http://localhost:8080/`
+
 You can change 8080 with your preferred port.
 
 ### Visual Studio
