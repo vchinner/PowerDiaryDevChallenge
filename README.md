@@ -1,5 +1,5 @@
 # Power Diary Dev Challenge
----
+
 ### Solution Content
 | Project | Description |
 | ----------- | ----------- |
@@ -26,14 +26,17 @@ You can change 8080 with your preferred port.
 ### Visual Studio
 You can also run the application by running the **PowerDiaryDevChallenge** solution from Visual Studio
 
-![alt text](https://imgur.com/a/hXRGYFW "Unit Tests")
-
-![alt text](https://imgur.com/a/d0fTGbG "Unit Tests")
-
 ## Unit Tests
 The are  10 unit tests in the **PowerDiaryDevChallenge.UnitTests** project and is run via the visual studio test runner
 
+![unit tests](https://i.imgur.com/Zuy9sZz.png)
 
+![unit tests](https://i.imgur.com/uZINB3w.png)
 
 ## Integration Tests
 The are 9 integration tests in the **PowerDiaryDevChallenge.IntegrationTests** project and is run via the visual studio test runner
+
+![integration tests](https://i.imgur.com/Mt9Xxlm.png)
+
+![integration tests](https://i.imgur.com/ymJoCSg.png)
+
